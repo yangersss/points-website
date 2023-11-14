@@ -9,6 +9,31 @@ h1, p {
     text-align: center;
 }
 
+/* Points Display Styling */
+#points {
+    font-size: 2.5em; /* Larger font size */
+    color: #7a6800; /* Gold color for emphasis */
+    background-color: rgba(255, 215, 0, 0.2); /* Light background */
+    padding: 10px;
+    border-radius: 10px; /* Rounded corners */
+    display: inline-block;
+    margin: 10px 0;
+    transition: transform 0.3s ease; /* Transition for the animation */
+    position: relative;
+}
+
+/* Keyframes for Pop Animation */
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); } /* Slightly larger */
+    100% { transform: scale(1); }
+}
+
+/* Apply the Animation When Points Change */
+#points.change {
+    animation: pop 0.3s ease;
+}
+
 #colors {
     display: flex;
     justify-content: space-around;
@@ -22,14 +47,6 @@ h1, p {
 .percentage {
     font-size: 2em;
     margin: 0.5em 0;
-}
-
-.percentage-bar {
-    height: 20px;
-    background: #ddd;
-    margin-bottom: 0.5em;
-    border-radius: 10px;
-    position: relative;
 }
 
 .ratio {

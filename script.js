@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const isCorrectBet = (color === 'red' && Math.random() < redPercentage / 100) ||
                 (color === 'blue' && Math.random() < bluePercentage / 100);
 
-            if (isCorrectBet) {
-                // Player wins
-                points += betAmount * (1 / (color === 'red' ? redPercentage : bluePercentage) * 100);
-            } else {
-                // Player loses
-                points -= betAmount;
-            }
+                if (isCorrectBet) {
+                    // Player wins - rounding the calculated points
+                    points += Math.round(betAmount * (1 / (color === 'red' ? redPercentage : bluePercentage) * 100));
+                } else {
+                    // Player loses
+                    points -= betAmount;
+                }
 
             // Blur the button to remove focus
             button.blur();
@@ -35,8 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updatePointsDisplay() {
-        document.getElementById('points').textContent = points;
+        const pointsElement = document.getElementById('points');
+        pointsElement.textContent = Math.round(points);
+        pointsElement.classList.add('change');
+    
+        // Remove the class after the animation completes
+        setTimeout(() => {
+            pointsElement.classList.remove('change');
+        }, 300); // The timeout duration should match the animation duration
     }
+      
 
     function updatePercentages() {
         const redPercentage = Math.floor(Math.random() * 50) + 25; // 25% to 75%
