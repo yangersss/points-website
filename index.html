@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betting Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <h1>Betting Game</h1>
+    <p>Points: <span id="points">300</span></p>
+    <div id="colors">
+        <div class="color-group" id="red-group">
+            <p>Red: <span class="percentage" id="red-percentage"></span></p>
+            <p class="ratio" id="red-ratio"></p>
+            <button class="bet-button" id="red">Bet on Red</button>
+        </div>
+        <div class="color-group" id="blue-group">
+            <p>Blue: <span class="percentage" id="blue-percentage"></span></p>
+            <p class="ratio" id="blue-ratio"></p>
+            <button class="bet-button" id="blue">Bet on Blue</button>
+        </div>
+    </div>
+    <div id="bet">
+        <label for="bet-amount">Bet Amount:</label>
+        <input type="number" id="bet-amount" min="1" max="100" value="10">
+    </div>
+    <div id="result"></div>
+</body>
+
+</html>
+
+<!-- 
+        A betting game played in the browser
+        We have a currency displayed at the top called points, starting with 300
+        Red is assigned a random percentage between 25% and 75%.
+        These percentages are shown to the user.
+        Blue is assigned the remaining percentage.
+        We can push a button to bet on red or blue.
+        Red and blue have an equal chance of being chosen.
+        If we bet on the correct color, we win 1/the percentage we bet on, then * how much we bet
+        If we bet on the wrong color, we lose how much we bet
+        This is one cycle of the game, after points are awarded or subtracted, calculate new percentages, etc.
+    -->
+<!-- 
+    Style sheet:
+    Have the percentage be large and match the color
+    under the percentage, have a bar that represents percentage: if it's 37%, the bar is 37% length, etc
+    red UI is on the left and blue UI is on the right
+    show the ratio in small font under that: 1:3.1 for example if the percentage is 37%
+    under that is a button colored red or blue
+ -->
