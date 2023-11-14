@@ -5,7 +5,7 @@ body {
     background: #f7f7f7;
 }
 
-h1, p {
+h1 {
     text-align: center;
 }
 
@@ -21,9 +21,9 @@ h1, p {
     background-color: rgba(255, 215, 0, 0.2);
     padding: 10px;
     border-radius: 10px;
-    display: inline-block; /* Keeps it in line but allows for block-like styling */
+    display: inline-block; 
     transition: transform 0.3s ease;
-    position: relative; /* For absolute positioning of the tooltip */
+    position: relative;
 }
 
 /* Keyframes for Pop Animation */
@@ -127,20 +127,20 @@ h1, p {
 
 #red-percentage,
 #red-group{
-    color: #E53E3E; /* A deeper shade of red for text */
+    color: #E53E3E;
 }
 
 #red-bar,
 #red-group .bet-button {
-    background-color: #E53E3E; /* A deeper shade of red for background */
+    background-color: #E53E3E;
 }
 
 #blue-percentage,
 #blue-group {
-    color: #3182CE; /* A much more vivid shade of blue for text */
+    color: #3182CE;
 }
 
 #blue-bar,
 #blue-group .bet-button {
-    background-color: #3182CE; /* A much more vivid shade of blue for background */
+    background-color: #3182CE;
 }
