@@ -9,17 +9,21 @@ h1, p {
     text-align: center;
 }
 
+#points-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
 /* Points Display Styling */
 #points {
-    font-size: 2.5em; /* Larger font size */
-    color: #7a6800; /* Gold color for emphasis */
-    background-color: rgba(255, 215, 0, 0.2); /* Light background */
+    font-size: 2.5em; 
+    color: #7a6800; 
+    background-color: rgba(255, 215, 0, 0.2);
     padding: 10px;
-    border-radius: 10px; /* Rounded corners */
-    display: inline-block;
-    margin: 10px 0;
-    transition: transform 0.3s ease; /* Transition for the animation */
-    position: relative;
+    border-radius: 10px;
+    display: inline-block; /* Keeps it in line but allows for block-like styling */
+    transition: transform 0.3s ease;
+    position: relative; /* For absolute positioning of the tooltip */
 }
 
 /* Keyframes for Pop Animation */
@@ -32,6 +36,43 @@ h1, p {
 /* Apply the Animation When Points Change */
 #points.change {
     animation: pop 0.3s ease;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    visibility: hidden;
+    width: 220px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.5em;
+}
+
+/* Arrow for Tooltip */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+/* Show Tooltip on Hover */
+#points:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
 }
 
 #colors {

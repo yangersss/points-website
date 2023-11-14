@@ -35,16 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updatePointsDisplay() {
+        const pointsValueElement = document.getElementById('points-value');
+        pointsValueElement.textContent = Math.round(points);
         const pointsElement = document.getElementById('points');
-        pointsElement.textContent = Math.round(points);
         pointsElement.classList.add('change');
-    
+        
         // Remove the class after the animation completes
         setTimeout(() => {
             pointsElement.classList.remove('change');
         }, 300); // The timeout duration should match the animation duration
     }
-      
 
     function updatePercentages() {
         const redPercentage = Math.floor(Math.random() * 50) + 25; // 25% to 75%
