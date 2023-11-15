@@ -9,14 +9,18 @@ h1 {
     text-align: center;
 }
 
-#points-container {
+#points-container, 
+#red-percentage-container, #blue-percentage-container, 
+#red-ratio-container, #blue-ratio-container
+{
+    position: relative;
     text-align: center;
     margin: 10px 0;
 }
 
 /* Points Display Styling */
 #points {
-    font-size: 2.5em; 
+    font-size: 50px; 
     color: #7a6800; 
     background-color: rgba(255, 215, 0, 0.2);
     padding: 10px;
@@ -54,7 +58,7 @@ h1 {
     transform: translateX(-50%);
     opacity: 0;
     transition: opacity 0.3s;
-    font-size: 0.5em;
+    font-size: 16px;
 }
 
 /* Arrow for Tooltip */
@@ -70,7 +74,10 @@ h1 {
 }
 
 /* Show Tooltip on Hover */
-#points:hover .tooltip {
+#points:hover .tooltip, #red-percentage-container:hover .tooltip, 
+#blue-percentage-container:hover .tooltip,
+#red-ratio-container:hover .tooltip, 
+#blue-ratio-container:hover .tooltip {
     visibility: visible;
     opacity: 1;
 }
@@ -86,12 +93,12 @@ h1 {
 }
 
 .percentage {
-    font-size: 2em;
+    font-size: 40px;
     margin: 0.5em 0;
 }
 
 .ratio {
-    font-size: 0.8em;
+    font-size: 25px;
     margin-bottom: 1em;
 }
 
