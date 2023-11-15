@@ -18,16 +18,28 @@
             <div id="points-tooltip" class="tooltip">The amount of points you have for betting.</div>
         </div>
     </div>
-        
+
     <div id="colors">
         <div class="color-group" id="red-group">
-            <p>Red: <span class="percentage" id="red-percentage"></span></p>
-            <p class="ratio" id="red-ratio"></p>
+            <div id="red-percentage-container">
+                <span class="percentage" id="red-percentage"></span>
+                <div id="red-percentage-tooltip" class="tooltip">of the pot was bet on red</div>
+            </div>
+            <div id="red-ratio-container">
+                <span class="ratio" id="red-ratio"></span>
+                <div id="red-ratio-tooltip" class="tooltip">return ratio</div>
+            </div>
             <button class="bet-button" id="red">Bet on Red</button>
         </div>
         <div class="color-group" id="blue-group">
-            <p>Blue: <span class="percentage" id="blue-percentage"></span></p>
-            <p class="ratio" id="blue-ratio"></p>
+            <div id="blue-percentage-container">
+                <span class="percentage" id="blue-percentage"></span>
+                <div id="blue-percentage-tooltip" class="tooltip">of the pot was bet on blue</div>
+            </div>
+            <div id="blue-ratio-container">
+                <span class="ratio" id="blue-ratio"></span>
+                <div id="blue-ratio-tooltip" class="tooltip">return ratio</div>
+            </div>
             <button class="bet-button" id="blue">Bet on Blue</button>
         </div>
     </div>
@@ -35,6 +47,6 @@
         <label for="bet-amount">Bet Amount:</label>
         <input type="number" id="bet-amount" min="1" max="100" value="10">
     </div>
-    <div id="result"></div>
 </body>
+
 </html>
