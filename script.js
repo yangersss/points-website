@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const { redPercentage, bluePercentage } = updatePercentages(); // Recalculate percentages only once per bet
 
             // Check if the bet is correct
-            const isCorrectBet = (color === 'red' && Math.random() < redPercentage / 100) ||
-                (color === 'blue' && Math.random() < bluePercentage / 100);
+            const isCorrectBet = (Math.random() < 0.5);
 
                 if (isCorrectBet) {
                     // Player wins - rounding the calculated points
