@@ -1,12 +1,105 @@
-body {
+html, body {
     font-family: 'DM Sans', sans-serif;
     margin: 0;
     padding: 20px;
     background: #f7f7f7;
+    scroll-behavior: smooth;
 }
 
 h1 {
     text-align: center;
+}
+
+/* Navigation Bar Styles */
+#main-nav {
+    padding: 8px 20px;
+    background-color: #34495e; /* A darker shade for a sleek look */
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+#main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    align-items: center; /* Center items vertically */
+}
+
+#main-nav ul li {
+    padding: 15px 20px;
+}
+
+#main-nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1em; /* Slightly larger font size for readability */
+    transition: color 0.3s ease-in-out;
+    font-weight: 500; /* Medium font weight */
+}
+
+#main-nav ul li a:hover, #main-nav ul li a:focus {
+    color: #1abc9c; /* A fresh color for hover state */
+    border-bottom: 2px solid #1abc9c; /* Underline effect on hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    #main-nav ul {
+        flex-direction: column; /* Stack the links vertically on small screens */
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #main-nav ul li {
+        width: 100%; /* Full width */
+        text-align: center; /* Center align the links */
+    }
+
+    #main-nav ul li a {
+        padding: 10px;
+        display: block; /* Block level for better tap targets */
+    }
+
+    /* Collapsible menu for smaller screens */
+    .menu-toggle {
+        display: none;
+        cursor: pointer;
+        /* Styling for menu toggle goes here */
+    }
+
+    .menu-toggle.active + #main-nav ul {
+        display: flex;
+    }
+}
+
+/* Add a fancy animation to the nav links */
+#main-nav ul li a {
+    position: relative;
+}
+
+#main-nav ul li a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #1abc9c;
+    transition: width 0.4s ease;
+}
+
+#main-nav ul li a:hover:after {
+    width: 100%;
+    left: 0;
+    background: #1abc9c;
 }
 
 #points-container, 
